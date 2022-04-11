@@ -24,5 +24,13 @@ public class PlayerMovement : MonoBehaviour {
 
 		cam.transform.localRotation = Quaternion.Euler(currentRotX, 0, 0);
 		transform.Rotate(Vector3.up * mouseX);
+
+	//Player Movement
+		float horizanal = Input.GetAxis("Right") * Time.deltaTime;
+		float vertical = Input.GetAxis("Vertical") * Time.deltaTime;
+
+		Vector3 pos = new Vector3(vertical, 0, horizanal);
+
+		cc.Move(pos);
 	}
 }
